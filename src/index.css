@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-
 @layer components {
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
   .grid-cols-5-auto {
     grid-template-columns: repeat(5, auto);
   }

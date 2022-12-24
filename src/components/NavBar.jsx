@@ -8,7 +8,7 @@ function NavBar() {
 
   return (
     <nav className="bg-gradient-to-b from-g-100 to-g-200 h-20 flex items-center justify-between lg:justify-around text-xl relative ">
-      <h1 className="text-white cursor-pointer inline font-Montserrat ml-6">
+      <h1 className="text-white cursor-pointer inline font-Montserrat ml-6 lg:m-0">
         React
         <FaReact className="ml-2 text-2xl inline font-bold" />
       </h1>
