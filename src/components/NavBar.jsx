@@ -4,37 +4,33 @@ import { ImCross } from "react-icons/im";
 import MenuItems from "./MenuItems";
 
 function NavBar() {
-  const [clicked, setClicked] = useState(false);
+  const [clicked, setClicked] = useState(true);
 
   return (
-    <nav className="bg-gradient-to-r from-g-100 to-g-200 h-20 justify-center items-center text-xl relative">
-      <h1 className="text-white ml-5 justify-self-start cursor-pointer inline font-Montserrat">
+    <nav className="bg-gradient-to-b from-g-100 to-g-200 h-20 flex items-center justify-between lg:justify-around text-xl relative ">
+      <h1 className="text-white cursor-pointer inline font-Montserrat ml-6">
         React
         <FaReact className="ml-2 text-2xl inline font-bold" />
       </h1>
-      <div className="" onClick={() => setClicked((p) => !p)}>
+      <div className="mr-6 lg:hidden lg:absolute" onClick={() => setClicked((p) => !p)}>
         {clicked ? <ImCross className="text-white" /> : <FaBars className="text-white" />}
       </div>
       <ul
-        className={
-          clicked
-            ? "bg-slate-600 left-0"
-            : "flex flex-col w-full h-[500px] absolute top-20 left-[-100%] opacity-100 transition-all lg:grid lg:gap-3 lg:grid-cols-5-auto lg:text-center lg:justify-end lg:w-[70vw]"
-        }
+        className={`flex m-0 flex-col absolute left-0 top-20 w-full bg-[#6668f4] pb-3 lg:p-0 transition-all duration-300 lg:flex-row lg:relative lg:top-0 lg:w-auto lg:left-0 lg:gap-3 lg:justify-self-end lg:bg-transparent lg:items-center ${
+          clicked ? "" : "left-[-100vw]"
+        }`}
       >
         {MenuItems.map((item, id) => (
-          <li key={id}>
-            <a
-              className="font-Montserrat py-2 px-4 text-white transition-all hover:bg-link-hover hover:rounded"
-              href={item.url}
-            >
-              {item.title}
-            </a>
+          <li
+            key={id}
+            className="text-center font-Montserrat py-5 lg:p-3 text-white transition-all hover:bg-link-hover hover:rounded"
+          >
+            <a href={item.url}>{item.title}</a>
           </li>
         ))}
-        <li>
+        <li className="text-center py-5 px-5 lg:p-0 font-Montserrat ">
           <a
-            className="py-2 px-5 font-Montserrat rounded bg-button-color text-white border-none outline-none cursor-pointer transition-all duration-300 hover:bg-white hover:text-g-200"
+            className="rounded py-2 px-5 bg-button-color text-white border-none outline-none cursor-pointer transition-all duration-300 hover:bg-white hover:text-g-200"
             href="#"
           >
             Sing Up
